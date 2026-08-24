@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://liteaucy.github.io/sitemap.xml
