@@ -1,233 +1,397 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
+    <!--
+      SEO / 分享信息：修改姓名、网站简介或域名时，请同步更新下面的
+      description、canonical、Open Graph、Twitter 和 title 字段。
+      分享图片文件固定为 images/og.png（建议尺寸 1200 × 630）。
+    -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#168dff">
-    <meta name="description" content="Liteaucy 的个人主页：作品、兴趣与灵感碎片。">
+    <meta name="theme-color" content="#f3f1e9">
+    <meta name="description" content="Liteaucy 的学术主页：研究方向、教育经历、科研项目与学术动态。">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://liteaucy.github.io/">
     <link rel="icon" href="images/favicon.png" type="image/png">
-    <link rel="preload" as="image" href="images/hero.webp" media="(min-width: 721px)" type="image/webp">
-    <link rel="preload" as="image" href="images/hero-mobile.webp" media="(max-width: 720px)" type="image/webp">
     <link rel="stylesheet" href="styles/styles.css">
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:url" content="https://liteaucy.github.io/">
-    <meta property="og:site_name" content="Liteaucy">
-    <meta property="og:title" content="Liteaucy — Personal Space">
-    <meta property="og:description" content="在代码与想象之间，构建自己的世界。">
+    <meta property="og:site_name" content="Liteaucy Academic Portfolio">
+    <meta property="og:title" content="Liteaucy — Academic Portfolio">
+    <meta property="og:description" content="Materials, energy and intelligent systems research.">
     <meta property="og:image" content="https://liteaucy.github.io/images/og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Liteaucy 亮蓝色个人空间">
+    <meta property="og:image:alt" content="Liteaucy 学术主页">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Liteaucy — Personal Space">
-    <meta name="twitter:description" content="在代码与想象之间，构建自己的世界。">
+    <meta name="twitter:title" content="Liteaucy — Academic Portfolio">
+    <meta name="twitter:description" content="Materials, energy and intelligent systems research.">
     <meta name="twitter:image" content="https://liteaucy.github.io/images/og.png">
 
-    <title>Liteaucy — Personal Space</title>
+    <title>Liteaucy — Academic Portfolio</title>
   </head>
   <body>
-    <main id="top">
-      <a class="skip-link" href="#content">跳到主要内容</a>
+    <!--
+      ================================================================
+      内容维护指南
+      1. 每个可编辑区域前都有“EDIT”注释，可按注释替换文字或复制条目。
+      2. 导航 href 与各 section 的 id 必须保持一致，否则页面跳转会失效。
+      3. 新增 PDF、图片或其他文件后，要把路径加入 build.mjs 的 sourceAssets。
+      4. 没有确认的教育、论文、奖项和联系方式目前均写为待补充，避免虚构。
+      ================================================================
+    -->
+    <a class="skip-link" href="#content">跳到主要内容</a>
 
-      <header class="site-header">
-        <a class="brand" href="#top" aria-label="Liteaucy 首页">
-          <span class="brand-mark" aria-hidden="true">L</span>
-          <span>Liteaucy</span>
-        </a>
+    <!-- EDIT：桌面端和移动端各有一组导航；新增栏目时请同时修改两处。 -->
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Liteaucy 学术主页">
+        <span class="brand-mark" aria-hidden="true">L.</span>
+        <span class="brand-copy">Liteaucy<small>Academic Portfolio</small></span>
+      </a>
 
-        <nav class="main-nav" aria-label="主导航">
-          <a href="#about">关于</a>
-          <a href="#work">作品</a>
-          <a href="#interests">兴趣</a>
-          <a href="#contact">联系</a>
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="header-link" href="https://github.com/Liteaucy" target="_blank" rel="noreferrer">
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
+
+      <details class="mobile-nav">
+        <summary aria-label="打开导航">Menu</summary>
+        <nav aria-label="移动端导航">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </nav>
+      </details>
+    </header>
 
-        <a class="header-social" href="https://github.com/Liteaucy" target="_blank" rel="noreferrer">
-          GitHub <span aria-hidden="true">↗</span>
-        </a>
-      </header>
+    <main id="content">
+      <!-- EDIT：首页。修改姓名、当前身份、一句话介绍、研究关键词和右侧研究概览。 -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+        <div class="hero-orbit orbit-two" aria-hidden="true"></div>
 
-      <div id="content">
-        <section class="hero" aria-labelledby="hero-title">
-          <picture class="hero-picture" aria-hidden="true">
-            <source media="(max-width: 720px)" srcset="images/hero-mobile.webp">
-            <img src="images/hero.webp" alt="" width="2400" height="1350" fetchpriority="high">
-          </picture>
-          <div class="hero-shade" aria-hidden="true"></div>
-          <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-main">
+          <p class="eyebrow"><span></span> Academic portfolio · Profile draft</p>
+          <h1 id="hero-title">Liteaucy</h1>
+          <p class="hero-role">Materials &amp; Chemical Engineering Researcher</p>
+          <p class="hero-statement">
+            探索实验、数据与工程问题之间的连接，关注清洁能源催化、
+            聚合物机器学习与 LIBS 煤岩智能识别。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#research">Explore research <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="#cv">View CV status</a>
+          </div>
+          <ul class="keyword-list" aria-label="研究方向关键词">
+            <li>Hydrogen Catalysis</li>
+            <li>Polymer Machine Learning</li>
+            <li>LIBS Spectroscopy</li>
+          </ul>
+        </div>
 
-          <div class="hero-content">
-            <p class="eyebrow"><span class="status-dot"></span>WELCOME TO MY SPACE</p>
-            <h1 id="hero-title">
-              你好，我是 <span>Liteaucy.</span>
-              <small>在代码与想象之间，构建自己的世界。</small>
-            </h1>
-            <p class="hero-intro">
-              一个持续学习与创造的数字空间。这里将逐步记录作品、兴趣，
-              以及一路上留下的灵感碎片。
+        <aside class="research-profile" aria-label="研究概览">
+          <div class="profile-topline"><span>Research profile</span><b>01</b></div>
+          <div class="profile-monogram" aria-hidden="true">L</div>
+          <dl>
+            <div><dt>Domain</dt><dd>Materials · Energy</dd></div>
+            <div><dt>Approach</dt><dd>Experiment · Data · ML</dd></div>
+            <div><dt>Focus</dt><dd>3 research themes</dd></div>
+          </dl>
+          <p>Education, publication and award details are ready to be replaced with verified information.</p>
+        </aside>
+      </section>
+
+      <!-- EDIT：最新动态。复制一个 article 即可新增动态；datetime 使用 YYYY-MM。 -->
+      <section class="news-strip" aria-labelledby="news-title">
+        <div class="section-label section-label-light">
+          <span>News</span><i>最新动态</i>
+        </div>
+        <div class="news-list">
+          <article><time datetime="2026-08">2026.08</time><p id="news-title">Academic portfolio redesigned and launched.</p></article>
+          <article><time datetime="2026-08">2026.08</time><p>Research records and publication links are being organized.</p></article>
+        </div>
+      </section>
+
+      <!-- EDIT：个人简介。适合补充学术兴趣、科研经历概述和未来规划。 -->
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="section-label"><span>01</span><i>About me / 个人简介</i></div>
+        <div class="about-layout">
+          <div class="about-heading">
+            <p class="overline">Research with structure, curiosity and purpose.</p>
+            <h2 id="about-title">把复杂问题，<br>变成可验证的答案。</h2>
+          </div>
+          <div class="about-copy">
+            <p class="lead">
+              我关注材料与能源系统中的关键问题，并尝试将实验研究、光谱分析与机器学习方法连接起来。
             </p>
-
-            <div class="hero-actions">
-              <a class="button button-primary" href="https://github.com/Liteaucy" target="_blank" rel="noreferrer">
-                查看 GitHub <span aria-hidden="true">↗</span>
-              </a>
-              <a class="button button-ghost" href="#about">继续探索 <span aria-hidden="true">↓</span></a>
+            <p>
+              这个网站用于整理研究主题、项目过程、学术成果与长期学习笔记。未提供的个人履历信息均保留为待补充状态，便于后续替换为真实资料。
+            </p>
+            <div class="about-meta">
+              <div><span>Academic interests</span><p>Energy materials · Data-driven science · Intelligent sensing</p></div>
+              <div><span>Future direction</span><p>面向可持续能源与智能材料研究，持续加强实验与计算能力。</p></div>
             </div>
-
-            <ul class="hero-tags" aria-label="关注方向">
-              <li>Web</li>
-              <li>Visual</li>
-              <li>ACG</li>
-            </ul>
           </div>
+        </div>
+      </section>
 
-          <div class="art-note" aria-hidden="true">
-            <span>01</span>
-            <p>PERSONAL SPACE<br>BLUE HOUR</p>
-          </div>
-        </section>
-
-        <div class="ticker" aria-hidden="true">
+      <!-- EDIT：教育经历。按时间倒序复制 timeline-item，并替换院校、学位、时间、课程与荣誉。 -->
+      <section class="section education" id="education" aria-labelledby="education-title">
+        <div class="section-label"><span>02</span><i>Education / 教育经历</i></div>
+        <div class="section-heading-row">
           <div>
-            <span>CREATE WITH CURIOSITY</span><i>✦</i>
-            <span>LEARN IN PUBLIC</span><i>✦</i>
-            <span>KEEP EXPLORING</span><i>✦</i>
-            <span>CREATE WITH CURIOSITY</span><i>✦</i>
-            <span>LEARN IN PUBLIC</span><i>✦</i>
-            <span>KEEP EXPLORING</span><i>✦</i>
+            <p class="overline">Academic journey</p>
+            <h2 id="education-title">Education</h2>
+          </div>
+          <p class="section-intro">院校、学位、时间、课程与荣誉信息尚未提供，以下位置已为正式履历预留。</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <time>Present</time>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div>
+              <p class="item-kicker">Current study · Details to update</p>
+              <h3>Institution &amp; Degree</h3>
+              <p>Materials &amp; Chemical Engineering</p>
+              <ul class="detail-list">
+                <li>Degree and major information</li>
+                <li>Core courses and academic ranking</li>
+                <li>Scholarships and honors</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-item timeline-muted">
+            <time>Earlier</time>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div>
+              <p class="item-kicker">Previous education · Details to update</p>
+              <h3>Institution &amp; Degree</h3>
+              <p>Add undergraduate or prior study information here.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!--
+        EDIT：科研经历。每个 research-card 是一个完整项目模板，包含：
+        项目名称、方向标签、研究背景、方法和成果。复制整块 article 可新增项目。
+      -->
+      <section class="research" id="research" aria-labelledby="research-title">
+        <div class="section research-inner">
+          <div class="section-label section-label-light"><span>03</span><i>Research / 科研经历</i></div>
+          <div class="section-heading-row research-heading">
+            <div>
+              <p class="overline">Selected research themes</p>
+              <h2 id="research-title">Three questions.<br>One connected practice.</h2>
+            </div>
+            <p class="section-intro">每个主题均按背景、研究内容、方法与成果组织；具体时间、指标和链接等待真实资料补充。</p>
+          </div>
+
+          <div class="research-list">
+            <!-- Research project 01：制氢催化剂 -->
+            <article class="research-card">
+              <div class="research-index">R / 01</div>
+              <div class="research-title-block">
+                <p>Energy conversion · Catalysis</p>
+                <h3>Hydrogen Production Catalyst</h3>
+                <ul class="tag-list"><li>Electrocatalysis</li><li>Material Synthesis</li><li>Characterization</li></ul>
+              </div>
+              <div class="research-details">
+                <div><span>Background</span><p>面向低碳制氢过程，研究高效、稳定且可规模化的催化材料设计问题。</p></div>
+                <div><span>Methods</span><p>材料制备 · 电化学测试 · 结构表征 · 机理分析</p></div>
+                <div><span>Outcome</span><p>研究阶段、性能指标、论文与数据链接待补充。</p></div>
+              </div>
+            </article>
+
+            <!-- Research project 02：聚合物机器学习 -->
+            <article class="research-card">
+              <div class="research-index">R / 02</div>
+              <div class="research-title-block">
+                <p>Materials informatics · Machine learning</p>
+                <h3>Polymer Machine Learning</h3>
+                <ul class="tag-list"><li>Descriptors</li><li>Prediction</li><li>Interpretability</li></ul>
+              </div>
+              <div class="research-details">
+                <div><span>Background</span><p>面向聚合物复杂的结构—性能关系，探索数据驱动的性质预测与材料筛选。</p></div>
+                <div><span>Methods</span><p>数据清洗 · 分子描述符 · 回归/分类模型 · 可解释性分析</p></div>
+                <div><span>Outcome</span><p>数据集规模、模型指标、代码仓库与研究结论待补充。</p></div>
+              </div>
+            </article>
+
+            <!-- Research project 03：LIBS 煤岩识别 -->
+            <article class="research-card">
+              <div class="research-index">R / 03</div>
+              <div class="research-title-block">
+                <p>Spectroscopy · Intelligent mining</p>
+                <h3>LIBS Coal–Rock Recognition</h3>
+                <ul class="tag-list"><li>LIBS</li><li>Spectral Analysis</li><li>Classification</li></ul>
+              </div>
+              <div class="research-details">
+                <div><span>Background</span><p>面向智能矿山快速感知需求，研究基于激光诱导击穿光谱的煤岩识别。</p></div>
+                <div><span>Methods</span><p>光谱预处理 · 特征提取 · 机器学习分类 · 模型评估</p></div>
+                <div><span>Outcome</span><p>实验装置、样本数量、识别准确率与成果链接待补充。</p></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!--
+        EDIT：论文与发表。获得真实论文后，可用论文条目替换 empty-publications；
+        建议字段：标题、作者、期刊/会议、年份、DOI、PDF、代码。
+      -->
+      <section class="section publications" id="publications" aria-labelledby="publications-title">
+        <div class="section-label"><span>04</span><i>Publications / 论文与发表</i></div>
+        <div class="section-heading-row">
+          <div>
+            <p class="overline">Research outputs</p>
+            <h2 id="publications-title">Publications</h2>
+          </div>
+          <div class="publication-status"><span>Profile status</span><strong>Records pending</strong></div>
+        </div>
+
+        <div class="empty-publications">
+          <span aria-hidden="true">∅</span>
+          <div>
+            <h3>尚未提供可公开的论文记录</h3>
+            <p>后续可在这里添加论文标题、作者、期刊、年份、DOI、PDF 与代码链接；也可以替换为本科毕业论文或研究报告。</p>
           </div>
         </div>
 
-        <section class="section about" id="about" aria-labelledby="about-title">
-          <div class="section-kicker">
-            <span>02</span><p>ABOUT / 关于</p>
+        <div class="output-grid">
+          <article><span>01</span><p>Manuscripts</p><h3>Journal &amp; conference papers</h3><small>Title · Authors · Venue · DOI</small></article>
+          <article><span>02</span><p>Thesis</p><h3>Undergraduate / graduate thesis</h3><small>Abstract · Supervisor · PDF</small></article>
+          <article><span>03</span><p>Open research</p><h3>Data, code &amp; reports</h3><small>Repository · Dataset · Documentation</small></article>
+        </div>
+      </section>
+
+      <!-- EDIT：项目展示。每个 project-card 可链接到论文、GitHub、演示或项目详情页。 -->
+      <section class="section projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-label"><span>05</span><i>Projects / 项目展示</i></div>
+        <div class="section-heading-row">
+          <div>
+            <p class="overline">Research in practice</p>
+            <h2 id="projects-title">Projects &amp; workflows</h2>
           </div>
+          <p class="section-intro">适合展示实验装置、数据流程、代码仓库与可复现结果。</p>
+        </div>
 
-          <div class="about-layout">
-            <div class="about-copy">
-              <p class="mini-label">A SPACE THAT KEEPS GROWING</p>
-              <h2 id="about-title">保持好奇，<br>持续创造。</h2>
-              <p class="lead">
-                这是一个正在生长的个人空间。没有固定边界，也不急着被定义——
-                用来保存作品、整理兴趣，并见证每一次微小的进步。
-              </p>
-              <p>
-                从最初的一张蓝色主视觉与几行 HTML 出发，这个页面会随着新的尝试
-                不断更新。未来的内容，将在这里继续发生。
-              </p>
-            </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-visual visual-catalyst" aria-hidden="true"><i></i><i></i><i></i><b>H₂</b></div>
+            <div class="project-card-copy"><p>Experimental workflow</p><h3>Catalyst Research Notebook</h3><span>Methods and results to be added</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual visual-polymer" aria-hidden="true"><i></i><i></i><i></i><i></i><b>ML</b></div>
+            <div class="project-card-copy"><p>Data pipeline</p><h3>Polymer Property Prediction</h3><span>Dataset and code link to be added</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual visual-libs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><b>LIBS</b></div>
+            <div class="project-card-copy"><p>Spectral analysis</p><h3>Coal–Rock Recognition Toolkit</h3><span>Demo and metrics to be added</span></div>
+          </article>
+        </div>
+      </section>
 
-            <figure class="visual-id">
-              <img src="images/avatar.webp" alt="蓝色调的个人视觉标识" loading="lazy" width="512" height="512">
-              <figcaption>
-                <span>VISUAL ID</span>
-                <p>BLUE / CALM / CURIOUS</p>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="focus-grid">
-            <article class="focus-card">
-              <span class="card-number">01</span>
-              <p class="card-english">Web</p>
-              <h3>把想法做成页面</h3>
-              <p>从一行 HTML 开始，继续探索设计、交互与更好的浏览体验。</p>
-            </article>
-            <article class="focus-card">
-              <span class="card-number">02</span>
-              <p class="card-english">Visual</p>
-              <h3>收集好看的瞬间</h3>
-              <p>关注色彩、构图与氛围，让每个作品拥有自己的视觉记忆。</p>
-            </article>
-            <article class="focus-card">
-              <span class="card-number">03</span>
-              <p class="card-english">Explore</p>
-              <h3>永远保留好奇心</h3>
-              <p>学习新的工具，也记录途中出现的灵感、问题和小小发现。</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section work" id="work" aria-labelledby="work-title">
-          <div class="section-heading-row">
+      <!-- EDIT：技能。复制 skill-groups 内的 article 可增加实验、软件或研究技能。 -->
+      <section class="skills" id="skills" aria-labelledby="skills-title">
+        <div class="section skills-inner">
+          <div class="section-label section-label-light"><span>06</span><i>Skills / 研究技能</i></div>
+          <div class="skills-layout">
             <div>
-              <div class="section-kicker"><span>03</span><p>SELECTED WORK / 作品</p></div>
-              <h2 id="work-title">现在，与下一站。</h2>
+              <p class="overline">Methods &amp; tools</p>
+              <h2 id="skills-title">A cross-disciplinary toolkit.</h2>
             </div>
-            <p class="section-note">从这个主页开始，<br>慢慢填满空白。</p>
+            <div class="skill-groups">
+              <article><span>01 / Experiment</span><h3>实验与表征</h3><p>材料制备 · 电化学测试 · 光谱采集 · 数据记录</p></article>
+              <article><span>02 / Data</span><h3>数据分析</h3><p>数据清洗 · 特征工程 · 统计分析 · 可视化</p></article>
+              <article><span>03 / Modeling</span><h3>机器学习</h3><p>Regression · Classification · Model Evaluation · Interpretability</p></article>
+              <article><span>04 / Communication</span><h3>学术表达</h3><p>Literature Review · Research Writing · Presentation · Reproducibility</p></article>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <article class="featured-project">
-            <div class="project-image">
-              <img src="images/hero.webp" alt="Liteaucy 个人主页蓝色主视觉" loading="lazy" width="2400" height="1350">
-              <span>LIVE</span>
-            </div>
-            <div class="project-copy">
-              <div class="project-meta"><span>01</span><p>PERSONAL WEBSITE · 2026</p></div>
-              <h3>Liteaucy<br>Personal Space</h3>
-              <p>把最初的测试页面，升级为一个更完整、更像自己的数字空间。</p>
-              <a href="https://liteaucy.github.io/" target="_blank" rel="noreferrer">
-                访问原网址 <span aria-hidden="true">↗</span>
-              </a>
+      <!-- EDIT：荣誉、博客和图片。已有三种内容卡片，可分别替换待补充内容。 -->
+      <section class="section more" id="more" aria-labelledby="more-title">
+        <div class="section-label"><span>07</span><i>More / 更多</i></div>
+        <h2 id="more-title" class="visually-hidden">Awards, notes and gallery</h2>
+        <div class="more-grid">
+          <article class="more-panel awards-panel">
+            <p class="overline">Awards / 荣誉</p>
+            <h3>Recognition</h3>
+            <div class="pending-row"><span>—</span><p>奖学金、优秀学生与竞赛奖项信息待补充。</p></div>
+          </article>
+          <article class="more-panel notes-panel">
+            <p class="overline">Blog / 学习笔记</p>
+            <h3>Research notes</h3>
+            <ul>
+              <li><span>Reading</span>如何整理一篇研究论文</li>
+              <li><span>ML</span>材料数据建模中的验证清单</li>
+              <li><span>LIBS</span>光谱预处理方法笔记</li>
+            </ul>
+            <p class="panel-status">Articles coming soon</p>
+          </article>
+          <article class="more-panel gallery-panel">
+            <p class="overline">Gallery / 图片</p>
+            <h3>Field notes</h3>
+            <div class="gallery-placeholder" aria-label="图片待补充">
+              <div><span>Lab</span></div><div><span>Conference</span></div><div><span>Project</span></div>
             </div>
           </article>
+        </div>
+      </section>
 
-          <div class="future-panel">
-            <div><span>02 — ∞</span><p>NEXT CHAPTER</p></div>
-            <h3>更多内容，正在积累中。</h3>
-            <p>当有新的真实作品与记录时，这个区域会继续生长。</p>
-          </div>
-        </section>
+      <!--
+        EDIT：CV。上传文件（例如 files/cv-en.pdf）后：
+        1. 将文件路径加入 build.mjs 的 sourceAssets；
+        2. 把下面的 disabled button 改为 <a href="files/cv-en.pdf" download>Download CV</a>。
+      -->
+      <section class="cv-section" id="cv" aria-labelledby="cv-title">
+        <div class="cv-copy">
+          <p class="overline">Curriculum vitae</p>
+          <h2 id="cv-title">A concise record of<br>research &amp; growth.</h2>
+          <p>英文 CV 与中文简历文件尚未提供。上传 PDF 后即可启用下载按钮。</p>
+        </div>
+        <div class="cv-actions">
+          <button class="button button-disabled" type="button" disabled>Download CV · Soon</button>
+          <a href="#contact">Contact first <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
 
-        <section class="section interests" id="interests" aria-labelledby="interests-title">
-          <div class="section-kicker"><span>04</span><p>INTERESTS / 兴趣</p></div>
-          <h2 id="interests-title">构成我的三种颜色。</h2>
-
-          <div class="interest-grid">
-            <article class="interest-card interest-code">
-              <span>CODE · 正在学习</span>
-              <h3>构建</h3>
-              <p>HTML · CSS · JavaScript</p>
-            </article>
-            <article class="interest-card interest-visual">
-              <span>VISUAL · 持续关注</span>
-              <h3>感受</h3>
-              <p>Color · Image · Atmosphere</p>
-            </article>
-            <article class="interest-card interest-acg">
-              <span>ACG · 兴趣所在</span>
-              <h3>想象</h3>
-              <p>Animation · Game · Story</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="contact" id="contact" aria-labelledby="contact-title">
-          <div class="contact-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
-          <p class="mini-label">LET'S MEET IN THE DIGITAL UNIVERSE</p>
-          <h2 id="contact-title">在同一片数字星空下，<br>保持连接。</h2>
-          <p>欢迎从下面的入口找到我，也欢迎随时回来看看这里的新变化。</p>
-          <div class="contact-links">
-            <a href="https://github.com/Liteaucy" target="_blank" rel="noreferrer">
-              <span>GitHub</span><i>代码与项目</i><b aria-hidden="true">↗</b>
-            </a>
-            <a href="https://liteaucy.github.io/" target="_blank" rel="noreferrer">
-              <span>Website</span><i>个人主页</i><b aria-hidden="true">↗</b>
-            </a>
-          </div>
-        </section>
-      </div>
-
-      <footer>
-        <a class="brand footer-brand" href="#top"><span class="brand-mark">L</span><span>Liteaucy</span></a>
-        <p>© 2026 · BUILT WITH CURIOSITY</p>
-        <a href="#top">返回顶部 ↑</a>
-      </footer>
+      <!-- EDIT：联系方式。仅公开愿意展示的信息；替换 Email 与 Google Scholar 占位项。 -->
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-decoration" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="overline">Contact / 联系</p>
+        <h2 id="contact-title">Let’s connect through research.</h2>
+        <p class="contact-intro">欢迎交流材料、能源、光谱分析与数据驱动研究。邮箱与 Google Scholar 地址可在确认后补充。</p>
+        <div class="contact-grid">
+          <a href="https://github.com/Liteaucy" target="_blank" rel="noreferrer"><span>GitHub</span><small>Code &amp; projects</small><b>↗</b></a>
+          <div><span>Email</span><small>Address to be added</small><b>—</b></div>
+          <div><span>Google Scholar</span><small>Profile to be added</small><b>—</b></div>
+        </div>
+      </section>
     </main>
+
+    <!-- EDIT：页脚年份、学术方向与品牌名。 -->
+    <footer>
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">L.</span><span class="brand-copy">Liteaucy<small>Academic Portfolio</small></span></a>
+      <p>© 2026 · Materials · Energy · Intelligent Systems</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
   </body>
 </html>
-
