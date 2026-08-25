@@ -1,41 +1,60 @@
-Liteaucy Personal Site
+# Liteaucy Academic Portfolio
 
-这是一个可直接部署到 GitHub Pages 的纯静态个人主页，不依赖构建工具。
-
-## 文件结构
-
-```text
-liteaucy-personal-site/
-├─ index.html
-├─ robots.txt
-├─ sitemap.xml
-├─ styles/
-│  └─ styles.css
-└─ images/
-   ├─ hero.webp
-   ├─ hero-mobile.webp
-   ├─ avatar.webp
-   ├─ favicon.png
-   └─ og.png
-```
+科研型个人网站，采用纯 HTML + CSS，包含 Home、News、About、Education、Research、Publications、Projects、Skills、Awards、Blog、Gallery、CV 与 Contact。
 
 ## 本地预览
 
-直接双击 `index.html` 即可查看。若浏览器限制本地资源，可在本目录启动任意静态文件服务器。
+直接打开 `index.html`，或在项目目录启动任意静态文件服务器。
 
-## 部署到 GitHub Pages
+## 本地构建
 
-1. 备份当前仓库内容。
-2. 将本目录内的文件和文件夹复制到 `Liteaucy/Liteaucy.github.io` 仓库根目录。
-3. 提交并推送到 GitHub；Pages 会继续使用 `https://liteaucy.github.io/`。
+```powershell
+npm run build
+```
 
-## 修改个人信息
+构建成功后会生成 `dist/server/index.js`。构建脚本会把 `build.mjs` 中 `sourceAssets` 列出的文件打包进去。
 
-- 页面文案与链接：编辑 `index.html`。
-- 颜色、排版与响应式样式：编辑 `styles/styles.css`。
-- 替换主图时，保留现有文件名可免改代码；建议继续使用 WebP。
-- 当前只使用已确认的 GitHub 与网站地址。获得真实的 Bilibili 个人空间地址后，可在联系区新增链接。
+## 修改内容
 
-## 图片说明
+`index.html` 中已经加入 `EDIT` 注释，可搜索 `EDIT：` 快速定位：
 
-原主页主图已转换为适合网页加载的 WebP：桌面版约 492 KB、移动版约 266 KB，避免继续加载约 13.6 MB 的原始 PNG。`og.png` 用于社交平台分享预览。
+- 首页：姓名、当前身份、个人陈述、研究关键词
+- News：复制 `article` 新增动态
+- Education：复制 `timeline-item` 新增教育经历
+- Research：复制 `research-card` 新增科研项目
+- Publications：替换论文占位区，添加 DOI / PDF / Code 链接
+- Projects：替换项目卡片和链接
+- More：补充奖项、博客和图片
+- CV：上传 PDF 后把禁用按钮改为下载链接
+- Contact：补充 Email 与 Google Scholar
+
+不要随意修改各栏目 `id`；顶部导航依赖这些锚点。
+
+## 修改样式
+
+`styles/styles.css` 已按页面模块分区并加入中文注释。网站主色集中在文件顶部的 `:root` 变量中，建议优先修改：
+
+- `--paper`：页面底色
+- `--ink`：正文深色
+- `--teal`：主强调色
+- `--cyan`：浅强调色
+- `--night`：深色模块背景
+
+响应式断点位于样式文件末尾。
+
+## 新增 CV、论文 PDF 或科研图片
+
+1. 将文件放入项目内，例如 `files/cv-en.pdf` 或 `images/research/project-01.webp`。
+2. 把相对路径加入 `build.mjs` 的 `sourceAssets`。
+3. 若使用新文件类型，在 `contentTypes` 中补充 MIME 类型。
+4. 在 `index.html` 中更新对应链接。
+5. 再次运行 `npm run build`。
+
+## 发布到 GitHub Pages
+
+将项目内的网页文件提交到 `Liteaucy/Liteaucy.github.io` 仓库根目录。GitHub Pages 可直接发布 `index.html`；`dist` 主要用于本地/托管构建验证。
+
+## 当前仍需真实资料
+
+教育院校与时间、论文、奖项、CV、Email、Google Scholar、科研项目结果及相关图片尚未提供，目前均以明确占位内容展示，避免虚构个人履历。
+
